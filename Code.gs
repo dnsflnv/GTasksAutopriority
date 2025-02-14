@@ -36,6 +36,11 @@ function checkTasks() {
         task.title = newTitle;
         Tasks.Tasks.update(task, taskList.id, task.id);
       }
+
+      // Delete todoist stuff
+      if (title.startsWith('✓ ')) {
+        Tasks.Tasks.delete(taskList.id, task.id);
+      }
     }
   }
 }
